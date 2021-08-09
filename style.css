@@ -152,6 +152,8 @@ h1 {
   text-align: center;
   box-shadow: 4px 4px 2px whitesmoke,
               8px 8px 5px #30719b;
+  background: #121212;
+  color: white;
 }
 
 .alarmSettings {
