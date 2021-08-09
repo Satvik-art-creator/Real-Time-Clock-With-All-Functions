@@ -112,7 +112,7 @@ function toSetAlarm() {
   alarmValue = `${alarmTime.value} ${meridian}`;
 
   if (newTime < alarmValue) {
-    mess.innerHTML = `Your alarm will beep at ${alarmValue}<br>`;
+    mess.innerHTML = `It'll beep at ${alarmValue}<br>`;
   } else if (newTime === alarmValue) {
     if (!isPlaying) {
       audio.play();
