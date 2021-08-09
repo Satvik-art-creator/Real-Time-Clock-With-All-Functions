@@ -1,0 +1,298 @@
+:root {
+  --shadow: 0 0 4px whitesmoke, 0 0 10px whitesmoke, 0 0 15px whitesmoke,
+    0 0 20px whitesmoke, 0 0 40px #0fa, 0 0 50px #0fa, 0 0 60px #0fa, 0 0 70px #0fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #141313; */
+  background: linear-gradient(
+    -45deg,
+    #000,
+    #121212,
+    rgb(2, 2, 26),
+    rgb(19, 4, 4)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  color: #fff;
+  text-shadow: 0 0 7px #30719b, 0 0 10px #30719b, 0 0 21px #30719b,
+    0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa,
+    0 0 201px #0fa;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.Clock > h1 span {
+  font-size: 3.25rem;
+  animation: flicker 1.5s infinite alternate;
+}
+
+/* Flickering animation */
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: var(--shadow);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.clockImg {
+  position: relative;
+  width: 350px;
+  height: 310px;
+  background: url("clock.png") no-repeat;
+  background-size: 447px;
+}
+
+.clockImg::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 21px;
+  background-color: #121212ba;
+  border-radius: 50px;
+  top: 43%;
+  right: 37.5%;
+}
+
+.clockImg > .hr {
+  top: 28%;
+  position: absolute;
+  width: 5.5px;
+  right: 40%;
+  height: 60px;
+  background: #414449;
+  border-radius: 40px;
+  transform-origin: bottom;
+}
+
+.clockImg .min {
+  top: 23.8%;
+  position: absolute;
+  width: 3.5px;
+  right: 40.4%;
+  height: 71px;
+  background: #414449;
+  border-radius: 40px;
+  transform-origin: bottom;
+}
+
+.clockImg .sec {
+  top: 19.5%;
+  position: absolute;
+  width: 2.5px;
+  right: 40.5%;
+  height: 84px;
+  background: #414449;
+  border-radius: 50px;
+  transform-origin: bottom;
+}
+
+.Clock .time {
+  font-size: 2.3rem;
+  height: 50px;
+  margin-top: 25px;
+  color: #fff;
+  text-shadow: 0 0 5px #30719b, 0 0 #30719b, 0 0 #30719b,
+    0 0 2px #0fa, 0 0  #0fa, 0 0  #0fa, 0 0  #0fa, 0 0  #0fa,
+    0 0  #0fa;
+}
+
+.container hr {
+  border-width: 9px;
+}
+
+.Alarm .notification {
+  place-items: center;
+  display: grid;
+}
+
+.Alarm div input[type="time"] {
+  width: 120px;
+  margin: 28px 0 10px;
+  text-align: center;
+  box-shadow: 4px 4px 2px whitesmoke,
+              8px 8px 5px #30719b;
+}
+
+.alarmSettings {
+  display: block;
+  width: 85px;
+  height: 35px;
+  margin: 10px auto;
+  background: #2d3436;
+  outline: none;
+  border: 2px solid #121212;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.alarmSettings:hover {
+  box-shadow: 0 0 4px whitesmoke, 0 0 10px whitesmoke, 0 0 15px whitesmoke,
+  0 0 20px whitesmoke, 0 0 40px #0fa;
+  font-weight: 600;
+}
+
+#stopAlarm,
+.stopWatch .content .btns .dispBtn {
+  display: none;
+}
+
+.stopWatch .content {
+  display: flex;
+  justify-content: center;
+}
+
+.stopWatch .content h2 {
+  text-align: center;
+}
+
+.stopWatch .content .btns {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 14px;
+  font-family: "montserrat";
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.stopWatch .content .btns .btn{
+  position: relative;
+  margin: 50px 15px 25px 0;
+  border: 2px solid #ff7675;
+  padding: 10px 25px;
+  transition: 1s all ease;
+  z-index: 1;
+  overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.stopWatch .content .btns .btn::before{
+  background: #ff7675;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.stopWatch .content .btns #startBtn::before, .stopWatch .content .btns #stopBtn::before{
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.stopWatch .content .btns #startBtn:hover::before, .stopWatch .content .btns #stopBtn:hover::before{
+  height: 380%;
+  font-size: 17px;
+}
+
+.stopWatch .content .btns #resetBtn::before, .stopWatch .content .btns #lapBtn::before{
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.stopWatch .content .btns #resetBtn:hover::before, .stopWatch .content .btns #lapBtn:hover::before{
+  height: 380%;
+  font-size: 17px;
+}
+
+.stopWatch .content .btns .dispBtn {
+  display: none;
+}
+
+.allLaps{
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 100px 0 0;
+  text-align: center;
+  position: absolute;
+  border: 2px solid rgb(224, 18, 18);
+  display: none;
+  padding: 7px 15px;
+}
+
+.allLaps::before{
+  content: "Laps";
+  font-size: 25px;
+  font-weight: bold;
+  color: #ff7675;
+  text-decoration: underline;
+}
+
+.allLaps > h4.laps {
+  margin-top: 7px;
+  text-align: center;
+}
+
+@media screen and (max-width: 450px) {
+  h1{
+    font-size: 2.8rem;
+  }
+
+  .Clock > h1 span{
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1{
+    font-size: 2.5rem;
+  }
+
+  .Clock > h1 span{
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  h1{
+    font-size: 2.2rem;
+  }
+
+  .Clock > h1 span{
+    font-size: 2.5rem;
+  }
+}
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time CLOCK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <section class="Clock">
+            <h1>Real-Time <span>CLOCK</span></h1>
+            <br>
+            <br>
+            <br>
+            <div class="clockImg">
+                <div class="hr"></div>
+                <div class="min"></div>
+                <div class="sec"></div>
+            </div>
+            <h1 class="time"></h1>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <br>
+
+        <section class="Alarm">
+            <h1>ALARM</h1>
+
+            <br>
+            <br>
+
+            <div class="notification">
+                <h2>Set your Alarm</h2>
+                <br>
+                <input id="alarmTime" type="time" value="">
+                <br>
+                <br>
+                <input id="setAlarm" class="alarmSettings" type="submit" value="Set">
+                <button id="stopAlarm" class="alarmSettings">Stop</button>
+            </div>
+        </section>
+
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <br>
+
+        <section class="stopWatch">
+            <h1>Stopwatch</h1>
+
+            <br>
+            <br>
+
+            <div class="content">
+                <h2 class="watcher">Time: 00 : 00 : 00.000</h2>
+
+                <br>
+
+                <div class="btns">
+                    <button class="btn toggBtn" id="startBtn">Start</button>
+                    <button class="btn toggBtn" type="reset" id="resetBtn">Reset</button>
+
+                    <button class="btn dispBtn" id="stopBtn">Stop</button>
+                    <button class="btn dispBtn" id="lapBtn">Lap</button>
+                </div>
+                <br>
+
+                <div class="allLaps"></div>
+                <br>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
