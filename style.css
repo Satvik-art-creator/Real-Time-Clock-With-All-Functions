@@ -76,6 +76,7 @@ h1 {
   height: 310px;
   background: url("clock.png") no-repeat;
   background-size: 447px;
+  margin: auto;
 }
 
 .clockImg::before {
@@ -141,6 +142,10 @@ h1 {
   display: grid;
 }
 
+.Alarm .notification > h2{
+  color: #fff;
+}
+
 .Alarm div input[type="time"] {
   width: 120px;
   margin: 28px 0 10px;
@@ -159,6 +164,7 @@ h1 {
   border: 2px solid #121212;
   border-radius: 10px;
   cursor: pointer;
+  color: #fff;
 }
 
 .alarmSettings:hover {
@@ -179,6 +185,7 @@ h1 {
 
 .stopWatch .content h2 {
   text-align: center;
+  color: #fff;
 }
 
 .stopWatch .content .btns {
@@ -202,6 +209,7 @@ h1 {
   overflow: hidden;
   background-color: transparent;
   cursor: pointer;
+  color: #fff;
 }
 
 .stopWatch .content .btns .btn::before{
@@ -250,6 +258,7 @@ h1 {
   border: 2px solid rgb(224, 18, 18);
   display: none;
   padding: 7px 15px;
+  color: #fff;
 }
 
 .allLaps::before{
